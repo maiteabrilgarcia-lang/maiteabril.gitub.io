@@ -1,0 +1,287 @@
+:root {
+  --azul-noche: #071a38;
+  --azul-profundo: #0b2f5f;
+  --azul-medio: #1f6fa8;
+  --azul-claro: #dceef8;
+  --dorado: #c99335;
+  --dorado-claro: #f2d08a;
+  --blanco: #ffffff;
+  --crema: #fffaf2;
+  --texto: #0d1b36;
+  --sombra: rgba(7, 26, 56, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--crema);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+/* FONDO PRINCIPAL ESTILO TARJETA */
+.hero {
+  min-height: 100vh;
+  color: var(--blanco);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(220, 238, 248, 0.95) 0%, rgba(31, 111, 168, 0.75) 34%, rgba(11, 47, 95, 0.95) 68%, rgba(7, 26, 56, 1) 100%);
+}
+
+/* efecto estrellas doradas */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(242, 208, 138, 0.95) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 1px, transparent 1.5px);
+  background-size: 70px 70px, 110px 110px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* borde dorado lateral estilo acuarela */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(242, 208, 138, 0.45);
+  border-radius: 34px;
+  pointer-events: none;
+}
+
+.nav,
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  color: var(--dorado-claro);
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: var(--blanco);
+  text-decoration: none;
+  border: 1px solid rgba(242, 208, 138, 0.7);
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(7, 26, 56, 0.25);
+}
+
+.hero-content {
+  max-width: 980px;
+  margin: 130px auto 0;
+  text-align: center;
+}
+
+.eyebrow,
+.small-title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--dorado-claro);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  line-height: 1;
+  margin-bottom: 28px;
+  color: var(--blanco);
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+  max-width: 760px;
+  margin: 0 auto 38px;
+  font-size: 1.28rem;
+  color: var(--blanco);
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(7, 26, 56, 0.25);
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+  color: var(--azul-noche);
+  border: 1px solid var(--dorado-claro);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid var(--dorado-claro);
+  color: var(--blanco);
+}
+
+/* SECCIONES */
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 90px 32px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 900px;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--azul-noche);
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 1.55rem;
+  margin-bottom: 16px;
+  color: var(--azul-noche);
+}
+
+.intro p,
+.about p,
+.final-cta p {
+  font-size: 1.15rem;
+}
+
+/* TARJETAS DE SERVICIOS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--blanco);
+  padding: 38px;
+  border-radius: 28px;
+  box-shadow: 0 22px 55px rgba(7, 26, 56, 0.12);
+  border: 1px solid rgba(201, 147, 53, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "✦";
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  color: var(--dorado);
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: #263653;
+}
+
+/* SOBRE MÍ */
+.about {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(220, 238, 248, 0.85));
+  border-radius: 36px;
+  box-shadow: 0 22px 60px rgba(7, 26, 56, 0.14);
+  border: 1px solid rgba(201, 147, 53, 0.35);
+}
+
+/* CTA FINAL */
+.final-cta {
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(220, 238, 248, 0.95), rgba(255, 250, 242, 1));
+  border-radius: 38px;
+  margin-bottom: 70px;
+  border: 1px solid rgba(201, 147, 53, 0.35);
+}
+
+.final-cta .secondary {
+  color: var(--azul-noche);
+  background: transparent;
+}
+
+/* PIE */
+footer {
+  text-align: center;
+  padding: 34px;
+  background: var(--azul-noche);
+  color: var(--dorado-claro);
+  letter-spacing: 1px;
+}
+
+/* MÓVIL */
+@media (max-width: 800px) {
+  .hero {
+    padding: 24px;
+  }
+
+  .hero-content {
+    margin-top: 100px;
+  }
+
+  h1 {
+    letter-spacing: 5px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 70px 24px;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
